@@ -11,7 +11,7 @@ exports.registerUser = (name, email, password) =>
 
 			const newUser = new User({
 
-				name: name,
+				bName: name,
 				email: email,
 				hashed_password: hash,
 				created_at: new Date()
