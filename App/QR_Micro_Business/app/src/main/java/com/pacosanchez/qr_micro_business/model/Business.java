@@ -2,16 +2,12 @@ package com.pacosanchez.qr_micro_business.model;
 
 public class Business {
 
-    private String owner;
     private String businessName;
     private String token;
     private String email;
     private String password;
     private String newPassword;
 
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
 
     public void setBusinessName(String businessName){
         this.businessName = businessName;
@@ -23,10 +19,6 @@ public class Business {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getOwner(){
-        return owner;
     }
 
     public String getEmail(){

@@ -56,16 +56,15 @@ public class Register extends AppCompatActivity {
 
         setError();
 
-        String name = etOwnerName.getText().toString();
         String businessName = etBusinessName.getText().toString();
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
 
         int err = 0;
 
-        if(!validateFields(name)){
+        if(!validateFields(businessName)){
             err++;
-            etOwnerName.setError("Porfavor ingrese su nombre");
+            etOwnerName.setError("Porfavor ingrese el nombre de su empresa");
         }
 
         if(!validateEmail(email)){
@@ -80,14 +79,13 @@ public class Register extends AppCompatActivity {
 
         if(err==0){
             Business user = new Business();
-            user.setOwner(name);
             user.setBusinessName(businessName);
             user.setEmail(email);
             user.setPassword(password);
 
             registerProcess(user);
         } else{
-            showToastMessage("Huy un error en su informacion!");
+            showToastMessage("Hay un error en su informacion!");
         }
 
     }
