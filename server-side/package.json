@@ -2,6 +2,7 @@
   "name": "qr-microbusiness",
   "version": "1.0.0",
   "description": "Toby env",
+  "repository": "https://github.com/memo-saldana/QR-microbusiness",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
