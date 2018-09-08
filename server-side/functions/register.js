@@ -1,7 +1,7 @@
 'use strict';
 
 const User = require("../models/user");
-const bycrypt = require('bycrypt.js');
+const bycrypt = require('bcryptjs');
 
 exports.registerUser = (name, email, password) =>
 	new Promise((resolve,reject) => {

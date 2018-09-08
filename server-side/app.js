@@ -2,7 +2,7 @@ var express = require("express"),
 	app = express(),
 	bodyParser = require("body-parser"),
 	mongoose = require("mongoose"),
-	passport = require("passport"),
+	logger = require("morgan"),
 	User = require("./models/user");
 	router = express.Router();
 
