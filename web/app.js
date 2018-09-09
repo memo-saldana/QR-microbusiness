@@ -6,14 +6,13 @@ var express = require("express"),
 		LocalStrategy = require("passport-local"),
 		methodOverride = require("method-override"),
 		User = require("./models/user"),
-		Product = require("./models/product"),
-		
-		seedDB = require("./seeds");
+		Product = require("./models/product");
+
+		// seedDB = require("./seeds");
 
 // requiring routes
-var commentRoutes = require("./routes/comments"),
-		campgroundRoutes = require("./routes/campgrounds"),
-		indexRoutes = require("./routes/index");
+var indexRoutes = require("./routes/index"),
+		qrRoutes = require("./routes/qr")
 
 mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));	
@@ -24,12 +23,12 @@ app.use(methodOverride("_method"));
 // seedDB(); seed the database
 
 // Passport Config
-
 app.use(require("express-session")({
 	secret: "This time Jaina will win because she is a very cute cat.",
 	resave: false,
 	saveUninitialized: false
 }))
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -57,9 +56,7 @@ app.use(function(req,res, next) {
 // 	});
 
 app.use("/",indexRoutes);
-app.use("/campgrounds",campgroundRoutes);
-app.use("/campgrounds/:id/comments",commentRoutes);
-
+app.use("/qr", qrRoutes);
 
 app.listen(3000,function() {
 	console.log("YelpCamp started on port 3000");

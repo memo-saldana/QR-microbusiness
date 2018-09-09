@@ -8,6 +8,10 @@ router.get("/", function(req, res) {
   res.render("login");
 });
 
+router.get("/landing", function(req,res) {
+  res.send("LANDING ROUTE");
+});
+
 // AUTH ROUTES
 
 // Register routes
