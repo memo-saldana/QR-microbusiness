@@ -9,7 +9,8 @@ var salesSchema = new mongoose.Schema({
 		},
 		pName: String,
 		productType: String,
-		price: Number
+		price: Number,
+		
 	},
 
 
