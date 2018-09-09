@@ -1,19 +1,21 @@
 var express = require("express"),
-  router = express.Router(),
-  passport = require("passport"),
-  User = require("../models/user"),
-  Product = require("../models/product"),
-  Sales = require("../models/sales");
+ 	  router = express.Router(),
+ 	  passport = require("passport"),
+	  User = require("../models/user"),
+ 	  Product = require("../models/product"),
+  	Sales = require("../models/sales");
 
 // Show all products of a given business
-router.get("/index", function(req, res) {
-  User.findById(req.user._id, function(err, currUser) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render("/products/index", { products: currUser.products });
-    }
-  });
+router.get("/index", isLoggedIn, function(req, res) {
+	User.findById(req.user).populate("products").exec(function(err, currUser) {
+		if(err){
+			console.log(err);
+		} else {
+
+			console.log(currUser.products);
+	 		res.render("products/index",{products:currUser.products});
+		}
+	})
 });
 
 router.get("/new", isLoggedIn, function(req, res) {
