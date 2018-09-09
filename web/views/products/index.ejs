@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+	<div class="container">
+		<header class="jumbotron">
+			<div class="container">
+				<h1>Productos de tu empresa</h1>
+				<p>Aquí puedes observar y gestionar los productos que tienes en venta.</p>
+			</div>
+		</header>
+
+		<div class="row text-center" style="display: flex; flex-wrap: wrap;">
+			<% products.forEach(function(product){ %>
+				<div class="col-md-3 col-sm-6">
+					<div class="thumbnail">
+						<img src="<%= product.image %>">
+						<div class="caption">
+							<h4>
+								<%= product.name %>
+							</h4>
+						</div>
+						<p>
+							<a href="/product/<%= product._id %>" class="btn btn-primary">More info</a>
+						</p>
+					</div>
+				</div>
+				<% }) %>
+		</div>
+
+	</div>
+	<% include ../partials/footer %>
