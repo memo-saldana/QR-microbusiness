@@ -8,6 +8,7 @@ var express = require("express"),
 
 // Creation Form
 router.get("/new", isLoggedIn, function(req,res) {
+	console.log(req.user);
 	res.render("qrcode/new");	
 })
 
