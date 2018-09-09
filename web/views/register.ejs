@@ -7,7 +7,13 @@
 		<input type="text" name="username" placeholder="Usuario">
 		<input type="password" name="password" placeholder="Contraseña">
 		<input type="text" name="clabe" placeholder="Clabe">
-		<input type="text" name="account_type" placeholder="Tipo de Cuenta">
+		<div class="form-group">
+			<label for="account_type">Tipo de cuenta</label>
+			<select class="form-control" id="account_type">
+				<option>TC (Tarjeta de Credito)</option>
+				<option>CL (CLABE interbancaria)</option>
+			</select>
+		</div>
 		<button>Registarse</button>
 	</form>
 
