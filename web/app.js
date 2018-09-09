@@ -12,7 +12,8 @@ var express = require("express"),
 
 // requiring routes
 var indexRoutes = require("./routes/index"),
-		qrRoutes = require("./routes/qr")
+		qrRoutes = require("./routes/qr"),
+		productRoutes = require("./routes/product");
 
 mongoose.connect("mongodb://localhost:27017/qr-microbusiness", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));	
@@ -57,6 +58,7 @@ app.use(function(req,res, next) {
 
 app.use("/",indexRoutes);
 app.use("/qr", qrRoutes);
+app.use("/product", productRoutes);
 
 app.listen(3000,function() {
 	console.log("YelpCamp started on port 3000");

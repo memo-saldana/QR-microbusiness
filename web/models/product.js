@@ -4,11 +4,7 @@ var mongoose = require("mongoose"),
 var productSchema = new mongoose.Schema({
 	pName: String,
 	price: Number,
-	productType: String,
-	owner: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: "User"
-	},
+	productType: String
 
 });
 
