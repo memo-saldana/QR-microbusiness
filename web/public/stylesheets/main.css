@@ -1,11 +1,34 @@
+body {
+  font-family: "Montserrat";
+}
+
 .thumbnail img {
-	width: 100%;
+  width: 100%;
 }
 
 .thumbnail {
-	padding: 0;
+  padding: 0;
 }
 
 .delete-form {
-	display: inline;
+  display: inline;
+}
+
+.h1 {
+  size: 30px;
+  text-align: center;
+  margin: 40px;
+}
+
+.form-delete {
+  margin: 20px;
+}
+
+.login__form {
+  margin: 20px;
+}
+
+login__p {
+  text-align: center;
+  color: white;
 }
