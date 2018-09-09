@@ -28,7 +28,39 @@ body {
   margin: 20px;
 }
 
-login__p {
+.login__p {
   text-align: center;
-  color: white;
+}
+
+.qrnew__h3 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.form-container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.qrcode {
+  display: block;
+  margin: auto;
+}
+
+.qrcode__a {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.header {
+  background-color: #cce6ff;
+}
+
+.landing__a {
+  text-decoration: none;
+  color: inherit;
+}
+.landing__a:hover {
+  text-decoration: none;
+  color: inherit;
 }

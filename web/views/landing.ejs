@@ -1,16 +1,15 @@
 <% include ./partials/header %>
 
-	<h1>Welcome!</h1>
-	
-	<p>
-		<a href="/qr/new">Create a new QR!</a>
-	</p>
-	<p>
-		<a href="/product/index">Add a product to your portfolio</a>
-	</p>
-
-	<p>
-		<a href="/product/new">Add a product to your portfolio</a>
-	</p>
-
-        <% include ./partials/footer %>
+	<div class="container">
+		<h1 class="h1 landing__h1">Welcome!</h1>
+		<button type="button" class="btn btn-primary btn-lg btn-block">
+			<a class="landing__a" href="/qr/new">Create a new QR!</a>
+		</button>
+		<button type="button" class="btn btn-primary btn-lg btn-block">
+			<a class="landing__a" href="/product/index">Add a product to your portfolio</a>
+		</button>
+		<button type="button" class="btn btn-primary btn-lg btn-block">
+			<a class="landing__a" href="/product/new">Add a product to your portfolio</a>
+		</button>
+	</div>
+	<% include ./partials/footer %>
