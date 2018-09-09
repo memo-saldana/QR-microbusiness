@@ -5,7 +5,7 @@ var User = require("../models/user");
 
 //root
 router.get("/", function(req, res) {
-  res.render("landing");
+  res.render("login");
 });
 
 // AUTH ROUTES
@@ -22,7 +22,7 @@ router.post("/register", function(req, res) {
       res.render("register");
     }
     passport.authenticate("local")(req, res, function() {
-      res.redirect("/campgrounds");
+      res.redirect("/landing");
     });
   });
 });
@@ -35,7 +35,7 @@ router.get("/login", function(req, res) {
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/campgrounds",
+    successRedirect: "/landing",
     failureRedirect: "/login"
   }),
   function(req, res) {}
@@ -45,7 +45,7 @@ router.post(
 
 router.get("/logout", function(req, res) {
   req.logout();
-  res.redirect("/campgrounds");
+  res.redirect("/login");
 });
 
 // middleware
